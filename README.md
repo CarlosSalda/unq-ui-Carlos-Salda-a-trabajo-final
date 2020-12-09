@@ -1,8 +1,9 @@
 # unq-ui-Carlos-Salda-a-trabajo-final
 
 - Copiar el link y clonar el repositorio.
-- se debe instalar desde el bash (si se usa windows) con: "npm install react-router-dom"
+
 - Si se abre desde Visual Studio Code se puede inicar desde la interfaz en npm scripts
+- se debe instalar desde el bash (si se usa windows) con: "npm install react-router-dom"
 - si se abre atraves del bash simplemente con un "npm start" funciona
 
 
