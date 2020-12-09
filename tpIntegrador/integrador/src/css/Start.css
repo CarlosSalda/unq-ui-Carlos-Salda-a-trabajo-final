@@ -1,0 +1,123 @@
+#divBotones {
+    transform-style: preserve-3d;
+    font-family: 'Oswald', sans-serif;
+    color: #CCC;
+    text-shadow: 1px 1px 5px red;
+    margin-top:30px;
+    margin-left: 700px;
+}
+
+#Tijera {
+    margin-right: 10px;
+}
+
+#Tijera:hover {
+    padding: 10px 20px;
+}
+
+
+#Piedra {
+    margin-right: 10px;
+}
+
+#Piedra:hover {
+    padding: 10px 20px;
+}
+
+
+#Papel {
+    margin-right: 10px;
+}
+
+#Papel:hover {
+    padding: 10px 20px;
+}
+
+
+#Lagarto {
+    margin-right: 10px;
+}
+
+#Lagarto:hover {
+    padding: 10px 20px;
+}
+
+
+#Spock {
+    margin-right: 10px;
+}
+
+#Spock:hover {
+    padding: 10px 20px;
+}
+
+
+#infoRules {
+    margin-top: 100px;
+    margin-left: 500px;
+}
+
+#rulesPhoto {
+    margin-left: 200px;
+}
+
+#rulesAndInfo {
+    font-weight: bold;
+}
+
+
+#rulesAndInfo2 {
+    font-size: 18px;
+    font-style: italic;
+}
+
+
+#rulesAndInfo3 {
+    font-size: 18px;
+    font-style: italic;
+}
+
+#score {
+    transform-style: preserve-3d;
+    font-family: 'Oswald', sans-serif;
+    color: #CCC;
+    text-shadow: 1px 1px 5px red;
+    margin-left: 740px;
+    font-size: 45px;
+    margin-top: 20px;
+}
+
+#endGame {
+    margin-left: 640px;
+    text-justify: auto;
+    border-style: double;
+    border-color: red;
+}
+
+#tEndGame {
+    margin-left: 500px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#photoElection {
+    margin-left: 500px;
+    border-style: dotted;
+    border-color: blue;
+}
+
+#response {
+    margin-left: 500px;
+    border-style: dotted;
+    border-color: blue;
+}
+
+#last {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#last2:hover {
+    width: 60px;
+    height: 70px;
+}
