@@ -52,11 +52,13 @@ const Start = () => {
     const decideWinner = (tarId, imgR) => {
 
         if ((tarId === imgR.value)) {
+            console.log("entre")
             setGane("empate")
+            console.log(gane)
         }
 
         //condiciones si usuario elige tijera
-        if ((tarId === "Tijera" && imgR.value === "Piedra") || (tarId === "Tijera" && imgR.value === "Spock")) {  
+        if ((tarId === "Tijera" && imgR.value === "Piedra") || (tarId === "Tijera" && imgR.value === "Spock")) {
             setPcScore(pcScore + 1)
             setGane("false")
         }
@@ -116,7 +118,7 @@ const Start = () => {
     //se setea la decision de la pc a traves del valor random, se hace que se muestra en la pagina la decision y se llama añ decideWinner()
     // en el cual elige el ganador
     const callDecideWinner = (imgR, random, target) => {
-    
+
         const tarId = target.id
 
         if (random <= 20) {
@@ -349,17 +351,13 @@ const Start = () => {
 
     //Handler de la eleccion del usuario
     const callOption = async (event) => {
-        //seleeciona para esconder la data de "endGame()", para poder seguir jugando
-        let win = document.getElementById("endGame")
-        let text = document.getElementById("tEndGame")
+
 
         //guarda en una variable el valor de textContent del event(seria la eleccion del jugador)
         let val = event.target.textContent
         let buton = event.target
 
         //esconde la data de endGame()
-        win.hidden = true
-        text.hidden = true
 
         buton.disabled = true //poner disable el boton para no hacer elecciones de manera infinita
 
@@ -409,76 +407,28 @@ const Start = () => {
         return pcScore >= 1 || playerScore >= 1
     }
 
-    const Decision = () => {
-
-        //acciones a tomar si se pierde
-        if (endGame() && gane === "false") {
-            setTimeout(function () {
-                let win = document.getElementById("endGame")
-                let text = document.getElementById("tEndGame")
-                text.hidden = false
-                text.textContent = "Perdiste! Gracias por jugar, podes volver a intentarlo!"
-
-
-                win.hidden = false
-                win.src = "https://cdn.ticbeat.com/src/uploads/2017/07/5-errores-comunes-entrevistas-de-trabajo-810x540.jpg"
-
-            }, 3350);
-        }
-
-        //acciones a tomar si se gana
-        if (endGame() && gane === "true") {
-            setTimeout(function () {
-                let win = document.getElementById("endGame")
-                let text = document.getElementById("tEndGame")
-
-                text.hidden = false
-                text.textContent = "Ganaste! Gracias por jugar, todavia podes seguir jugando!"
-
-                win.hidden = false
-                win.src = "https://static9.depositphotos.com/1579454/1139/i/950/depositphotos_11399904-stock-photo-first-place-trophy-cup.jpg"
-
-            }, 3350);
-        }
-
-        //acciones a tomar si se empata
-        if(endGame() && gane === "empate") {
-            setTimeout(function () {
-                let win = document.getElementById("endGame")
-                let text = document.getElementById("tEndGame")
-
-                text.hidden = false
-                text.textContent = "Empate! Todavia podes tomarte revancha!"
-
-                win.hidden = false
-                win.src = "https://llevatilde.es/imagetexts/c/c6/empate.png"
-
-            }, 3350);
-            
-        }
-    }
 
     //seteo la ultima decision de la pc
     const pcElection = () => {
 
-        if(lastPc) {
-            return(<img id= "last2"  src= {lastPc} width="40" height="50"></img>)
+        if (lastPc) {
+            return (<img id="last2" src={lastPc} width="40" height="50"></img>)
         }
     }
 
     //seteo la ultima decision del jugador
     const humanElection = () => {
-    
-        if(lastHuman) {
-            return(<img id="last2" src= {lastHuman} width="40" height="50"></img>)
+
+        if (lastHuman) {
+            return (<img id="last2" src={lastHuman} width="40" height="50"></img>)
         }
     }
 
 
     return (<>
-        {/*Muestra la ultima eleccion de la pc y del jugador (como en el trabajo solo decia de cada partida,es decir de cada "eleccion" solo muestro el ultimo valor)*/ }
+        {/*Muestra la ultima eleccion de la pc y del jugador (como en el trabajo solo decia de cada partida,es decir de cada "eleccion" solo muestro el ultimo valor)*/}
         <div id="last">
-            <div>ultima eleccion PC: {pcElection()}</div> 
+            <div>ultima eleccion PC: {pcElection()}</div>
             <div>  tu ultima eleccion : {humanElection()}</div>
         </div>
 
@@ -491,33 +441,24 @@ const Start = () => {
             <button type="button" class="btn btn-outline-warning" id="Spock" onClick={callOption}>Spock</button>
         </div>
 
-        {/*Score de puntuacion actual del juego.*/ }
-        <div id = "score">
-           TU: {playerScore} -- PC: {pcScore} 
+        {/*Score de puntuacion actual del juego.*/}
+        <div id="score">
+            TU: {playerScore} -- PC: {pcScore}
         </div>
 
         {/*imagenes la cuales son luego cargadas con el source para cada decision correspondiente. */}
         <img hidden id="photoElection" src="" width="200" height="300"></img>
         <img hidden id="response" src="" width="200" height="300"></img>
 
-        {/*muestra el resultado si se gano/empato/perdio con una imagen y un texto.*/}
-        <div hidden={!endGame()}>{Decision()}</div>
-
-        <div> 
-            <img hidden id="endGame" src="" width="500" height="600"></img>
-        </div>
-
-        <div>
-             <p hidden id="tEndGame"> </p>
-        </div>
-
         {/*Reglas del juego junto con informacion y una imagen explicativa. */}
         <div id="infoRules" >
-            <p id="rulesAndInfo" hidden>Bienvenidos a Tijera, Piedra, Papel, Lagarto, Spock. Es similar a un piedra, papel, tijera tradicional pero con algunas distinciones: </p> 
-            <p id="rulesAndInfo2" hidden>Tijera le gana a Papel y Lagarto. Papel le gana Piedra y a Spock. Piedra le gana a Lagarto y a Tijera </p> 
+            <p id="rulesAndInfo" hidden>Bienvenidos a Tijera, Piedra, Papel, Lagarto, Spock. Es similar a un piedra, papel, tijera tradicional pero con algunas distinciones: </p>
+            <p id="rulesAndInfo2" hidden>Tijera le gana a Papel y Lagarto. Papel le gana Piedra y a Spock. Piedra le gana a Lagarto y a Tijera </p>
             <p id="rulesAndInfo3" hidden> Lagarto le gana a Spock y  a Papel. Spock le gana a Tijera y a Piedra, les dejo una imagen explicativa: </p>
             <img hidden id="rulesPhoto" src={reglasPNG} width="500" height="600"></img>
         </div>
+
+        <footer id = "end">by Carlos Saldaña</footer>
     </>
     );
 }

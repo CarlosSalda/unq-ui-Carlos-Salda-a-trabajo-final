@@ -87,14 +87,14 @@
     margin-top: 20px;
 }
 
-#endGame {
+#endGameD {
     margin-left: 640px;
     text-justify: auto;
     border-style: double;
     border-color: red;
 }
 
-#tEndGame {
+#tEndGameD {
     margin-left: 500px;
     font-size: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -120,4 +120,11 @@
 #last2:hover {
     width: 60px;
     height: 70px;
+}
+
+#end {
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 600px;
+    margin-left: 1700px;
 }
